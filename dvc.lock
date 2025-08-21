@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  synth:
+    cmd: python scripts/synth_text.py
+    deps:
+    - path: scripts/synth_text.py
+      hash: md5
+      md5: badfe4701059127e99764f17348a69dc
+      size: 828
+    outs:
+    - path: data/synth/text.jsonl
+      hash: md5
+      md5: c0e5aebfe5706ac375fe3fb5d5f42acd
+      size: 152000

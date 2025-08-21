@@ -1,0 +1,7 @@
+stages:
+  synth:
+    cmd: python scripts/synth_text.py
+    deps:
+      - scripts/synth_text.py
+    outs:
+      - data/synth/text.jsonl
