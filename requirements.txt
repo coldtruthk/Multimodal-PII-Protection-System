@@ -10,3 +10,9 @@ opentelemetry-exporter-otlp
 pytest
 httpx
 ruff
+reportlab
+pillow
+opencv-python-headless
+numpy
+paddleocr
+paddlepaddle==2.6.1

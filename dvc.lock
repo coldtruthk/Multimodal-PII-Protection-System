@@ -5,10 +5,10 @@ stages:
     deps:
     - path: scripts/synth_text.py
       hash: md5
-      md5: badfe4701059127e99764f17348a69dc
-      size: 828
+      md5: 7235da6b6a55c13e5411d1c51b19e4fa
+      size: 763
     outs:
     - path: data/synth/text.jsonl
       hash: md5
-      md5: c0e5aebfe5706ac375fe3fb5d5f42acd
+      md5: cebd5681e00cec25fa2fe49f0d1b64d1
       size: 152000
