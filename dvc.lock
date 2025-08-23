@@ -12,3 +12,61 @@ stages:
       hash: md5
       md5: cebd5681e00cec25fa2fe49f0d1b64d1
       size: 152000
+  docs:
+    cmd: python scripts/synth_docs.py
+    deps:
+    - path: scripts/synth_docs.py
+      hash: md5
+      md5: ee0649cfd8835bc58a9389a3cbcdbce9
+      size: 3130
+    outs:
+    - path: data/synth/docs
+      hash: md5
+      md5: 69e26ac6cf3b1d4e0b7905cee09c3213.dir
+      size: 38606
+      nfiles: 20
+    - path: data/synth/labels
+      hash: md5
+      md5: b19314635001e783bc4b494d99c7b04c.dir
+      size: 34462
+      nfiles: 20
+  ocr:
+    cmd: python scripts/ocr_infer.py
+    deps:
+    - path: data/synth/docs
+      hash: md5
+      md5: 69e26ac6cf3b1d4e0b7905cee09c3213.dir
+      size: 38606
+      nfiles: 20
+    - path: scripts/ocr_infer.py
+      hash: md5
+      md5: 554eaa6a8eca5e5a1c6f3c28e18e6b64
+      size: 1670
+    outs:
+    - path: data/ocr
+      hash: md5
+      md5: 3c7edd2786f3e4bdd03a9daf6382f7f8.dir
+      size: 60605
+      nfiles: 20
+  pii:
+    cmd: python scripts/ocr_to_pii.py
+    deps:
+    - path: data/ocr
+      hash: md5
+      md5: 3c7edd2786f3e4bdd03a9daf6382f7f8.dir
+      size: 60605
+      nfiles: 20
+    - path: pii/rules.py
+      hash: md5
+      md5: 57999c7df061650ebe79cadcde6ad182
+      size: 1358
+    - path: scripts/ocr_to_pii.py
+      hash: md5
+      md5: 421d3a9048485fef4aa51664dedcb4b4
+      size: 1734
+    outs:
+    - path: data/pii
+      hash: md5
+      md5: d3634a7947d830576a836de1c35002b3.dir
+      size: 13572
+      nfiles: 20
